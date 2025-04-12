@@ -1,4 +1,4 @@
-# 🤖 LLM-Powered Meeting Preparation Crew  
+# 🤖 AI-Driven-Multi-Agent-Meeting-Preparation  
 *A Multi-Agent AI System using CrewAI + OpenAI + EXA Search*
 
 ---
