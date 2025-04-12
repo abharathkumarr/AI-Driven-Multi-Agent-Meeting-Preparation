@@ -1,151 +1,81 @@
-# 🤖 AI-Driven-Multi-Agent-Meeting-Preparation  
-*A Multi-Agent AI System using CrewAI + OpenAI + EXA Search*
+
+# 🤖 AI Driven Multi Agent Meeting Preparation
+
+This project demonstrates how to build a collaborative, multi-agent system using **CrewAI**, **OpenAI LLMs**, and **Exa Search** to automate meeting preparation. The system uses intelligent agents that specialize in tasks such as research, industry analysis, strategy generation, and briefing compilation.
+
+## 🧠 Overview
+
+Using CrewAI, we orchestrate a group of LLM agents with the following roles:
+- **🔍 Research Specialist**: Gathers detailed information about meeting participants and companies.
+- **📊 Industry Analyst**: Analyzes industry trends, challenges, and opportunities.
+- **🎯 Strategy Advisor**: Develops strategic talking points and questions.
+- **📄 Briefing Coordinator**: Compiles all outputs into a meeting-ready briefing document.
 
 ---
 
-## 📌 Project Overview
-
-This project demonstrates a **multi-agent collaboration system** built using [CrewAI](https://github.com/joaomdmoura/crewai), OpenAI's LLMs, and the [Exa](https://exa.ai/) search API. The agents work together to autonomously prepare for an upcoming client meeting by performing online research, industry analysis, strategic planning, and compiling a final meeting briefing document.
-
----
-
-## 🚀 Key Features
-
-- ✅ Built using **CrewAI**, an open-source multi-agent framework
-- 🧠 LLM agents powered by **OpenAI (GPT-4)** or other LLM providers
-- 🔎 Web search and content extraction using **EXA Search API**
-- 📊 Modular architecture with **four intelligent agents**
-- 📄 Generates a **comprehensive meeting briefing document**
-- 🔁 Agents self-heal and retry on failure with minimal user intervention
-
----
-
-## 🧩 System Workflow
+## 📁 File Structure
 
 ```
-[Agent 1: Research Specialist]
-          |
-          V
-[Agent 2: Industry Analyst]
-          |
-          V
-[Agent 3: Strategy Advisor]
-          |
-          V
-[Agent 4: Briefing Coordinator]
-          |
-          V
-      Final Briefing Document (Markdown)
+CrewAI_Project_Prep_for_a_Meeting_Prep.ipynb     # Main notebook containing the full implementation
+README.md                                        # Project overview and usage guide (this file)
 ```
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Installation
 
-- Python 3.10+
-- [CrewAI](https://pypi.org/project/crewai/)
-- [OpenAI API](https://platform.openai.com/)
-- [EXA Search API](https://exa.ai/)
-- LangChain Tools
-- Google Colab / Jupyter
-
----
-
-## 📦 Installation
+Install all required dependencies using pip:
 
 ```bash
-pip install -q crewai duckduckgo-search
-pip install -q 'crewai[tools]' decouple langchain-exa exa_py==1.0.7
+!pip install -q crewai duckduckgo-search
+!pip install -q 'crewai[tools]' decouple langchain-exa exa_py==1.0.7
 ```
 
 ---
 
 ## 🔐 Environment Setup
 
-Create a `.env` file or export environment variables for API keys:
+Ensure you have your API keys for OpenAI and Exa. Set them as environment variables:
 
-```bash
-export OPENAI_API_KEY=your_openai_api_key
-export EXA_API_KEY=your_exa_api_key
+```python
+import os
+os.environ["OPENAI_API_KEY"] = "your_openai_key"
+os.environ["EXA_API_KEY"] = "your_exa_key"
 ```
 
 ---
 
-## 🧑‍💻 How It Works
+## 🚀 How to Run
 
-The system uses four specialized agents:
+Run the notebook `CrewAI_Project_Prep_for_a_Meeting_Prep.ipynb` in Google Colab or Jupyter. You'll be prompted to input:
+- Participant emails
+- Meeting context
+- Meeting objective
 
-1. **Research Specialist**: Gathers detailed information on participants.
-2. **Industry Analyst**: Analyzes current market trends.
-3. **Strategy Advisor**: Creates discussion points and meeting strategy.
-4. **Briefing Coordinator**: Consolidates all information into a briefing document.
-
-Each agent is equipped with tools from EXA (search, similarity, and content extraction) to perform its job autonomously.
-
----
-
-## 📂 Project Structure
-
-```
-llm-meeting-prep/
-│
-├── main.ipynb                 # Main Notebook to run the project
-├── agents.py                  # Defines specialized agents
-├── tasks.py                   # Task definitions for each agent
-├── tools.py                   # EXA search tools
-├── requirements.txt           # Dependencies
-└── README.md                  # Project documentation (this file)
-```
+The system will then:
+1. Create agents and assign roles
+2. Execute each task using EXA search tools
+3. Collaborate and resolve internal issues autonomously
+4. Output a structured markdown briefing document
 
 ---
 
-## 🧪 Sample Inputs
+## 📋 Output
 
-During runtime, the user will be prompted to enter:
-
-- 👤 Emails of meeting participants
-- 📝 Context of the meeting (e.g., "Music Streaming Industry Pitch")
-- 🎯 Objective (e.g., "Convince Jay-Z to partner with us")
-
----
-
-## 📘 Output
-
-A Markdown-formatted briefing document with:
-
-- 📌 Participant bios
-- 🌍 Industry overview
-- 💡 Talking points
-- 🧠 Strategic recommendations
-
-Rendered directly in the notebook using `IPython.display`.
+At the end, a complete meeting briefing document is generated, including:
+- Participant bios
+- Industry insights
+- Talking points
+- Strategic recommendations
 
 ---
 
-## 🧠 Example Use Cases
+## 🤝 Credits
 
-- Business development teams preparing for client meetings
-- Investor or stakeholder briefings
-- Sales strategy sessions
-- Academic or conference panel preparation
+- Built using [CrewAI](https://github.com/joaomdmoura/crewai), [OpenAI](https://platform.openai.com/), and [Exa](https://exa.ai/)
 
 ---
 
-## 🤝 Contributing
+## 📜 License
 
-Pull requests and suggestions are welcome! If you’d like to contribute, please fork the repo and make changes.
-
----
-
-## 📢 Acknowledgements
-
-- [CrewAI](https://github.com/joaomdmoura/crewai) – Multi-agent framework
-- [EXA Search](https://exa.ai) – AI-powered search API
-- [OpenAI](https://openai.com) – LLM backend
-
----
-
-## 🌟 Author
-
-Developed by [Your Name]  
-Feel free to connect on [LinkedIn](https://www.linkedin.com/) or check out my [GitHub](https://github.com/)!
+This project is provided for educational purposes. Feel free to reuse and build upon it for your own hackathons or workflow automation tasks.
