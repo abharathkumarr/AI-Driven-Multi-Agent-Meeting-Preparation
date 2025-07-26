@@ -1,5 +1,5 @@
 
-# 🤖 AI Driven Multi Agent Meeting Preparation 
+# 🤖 AI Driven Multi Agent Meeting Preparation
 
 This project demonstrates how to build a collaborative, multi-agent system using **CrewAI**, **OpenAI LLMs**, and **Exa Search** to automate meeting preparation. The system uses intelligent agents that specialize in tasks such as research, industry analysis, strategy generation, and briefing compilation.
 
